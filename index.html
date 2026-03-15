@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Score Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <header class="page-header">
+            <h1>📊 Student Score Tracker</h1>
+            <p>Using QuickSort Algorithm</p>
+        </header>
+
+        <section class="card form-card" aria-label="Add student form">
+            <form id="student-form" class="student-form">
+                <label class="sr-only" for="name-input">Student Name</label>
+                <input id="name-input" type="text" placeholder="Student Name" autocomplete="off" required>
+                <label class="sr-only" for="score-input">Score</label>
+                <input id="score-input" type="number" placeholder="Score (0-100)" min="0" max="100" required>
+                <button id="add-btn" type="submit">Add Student</button>
+            </form>
+            <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="action-bar" aria-label="Actions">
+            <button id="clear-btn" type="button" class="secondary-btn">Clear All</button>
+            <button id="export-btn" type="button" class="secondary-btn">Export CSV</button>
+        </section>
+
+        <section id="stats-panel" class="card stats-panel" aria-label="Sort statistics"></section>
+
+        <section id="quicksort-steps-panel" class="card quicksort-panel" aria-label="QuickSort visualization"></section>
+
+        <section class="card table-card" aria-label="Student table">
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                            <th>Grade</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="page-footer">QuickSort Algorithm - O(n log n) Average Time Complexity</footer>
+    </main>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
